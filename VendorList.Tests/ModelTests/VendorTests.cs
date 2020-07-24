@@ -9,5 +9,14 @@ namespace VendorList.Tests
   public class VendorTest
   {
 
+     [TestMethod]
+    public void VendorConstructor_CreatesInstancesOfVendor_Vendor()
+    {
+      Vendor newVendor = new Vendor("test vendor");
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+    }
+
+    
+
   }
 }
