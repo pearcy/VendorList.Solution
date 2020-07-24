@@ -27,16 +27,16 @@ namespace VendorList.Controllers
       return RedirectToAction("Index");
     }
 
-     [HttpGet("/orders/{orderId}/orders/{orderId}")]
-      public ActionResult Show(int vendorId, int orderId)
-      {
-        Order order = Order.Find(orderId);
-        Vendor vendor = Vendor.Find(vendorId);
-        Dictionary<string, object> model = new Dictionary<string, object>();
-        model.Add("order", order);
-        model.Add("vendor", vendor);
-        return View(model);
-      }
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("order", vendorOrders);
+      return View(model);
+    }
 
      [HttpPost("/vendors/{vendorId}/orders")]
       public ActionResult Create(int vendorId, string orderDescription)
@@ -50,7 +50,6 @@ namespace VendorList.Controllers
         model.Add("vendor", foundVendor);
         return View("Show", model);
       }
-
 
 
   }
