@@ -6,8 +6,12 @@ using System;
 namespace VendorList.Tests
 {
   [TestClass]
-  public class VendorTest
+  public class VendorTest : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
      [TestMethod]
     public void VendorConstructor_CreatesInstancesOfVendor_Vendor()
