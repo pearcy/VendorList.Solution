@@ -8,24 +8,22 @@ namespace VendorList.Controllers
   public class OrdersController : Controller
   {
 
-      [HttpGet("/orders")]
-    public ActionResult Index()
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
-      List<Order> allOrders = Order.GetAll();
-      return View(allOrders);
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
     }
 
-     [HttpGet("/orders/new")]
-    public ActionResult New()
+    [HttpGet("/vendors/{vendorId}/items/{itemId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      return View();
-    }
-
-    [HttpPost("/orders")]
-    public ActionResult Create(string title)
-    {
-      Order myOrder = new Order(title);
-      return RedirectToAction("Index");
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
     }
 
     [HttpPost("/orders/delete")]
@@ -35,12 +33,6 @@ namespace VendorList.Controllers
       return View();
     }
 
-     [HttpGet("/orders/{id}")]
-    public ActionResult Show(int id)
-    {
-      Order foundOrder = Order.Find(id);
-      return View(foundOrder);
-    }
 
 
   }
