@@ -38,6 +38,8 @@ namespace VendorList.Controllers
       return View(model);
     }
 
+      // Creates new orders within a given Category
+
      [HttpPost("/vendors/{vendorId}/orders")]
       public ActionResult Create(int vendorId, string orderDescription)
       {
@@ -48,7 +50,7 @@ namespace VendorList.Controllers
         List<Order> vendorOrders = foundVendor.Orders;
         model.Add("orders", vendorOrders);
         model.Add("vendor", foundVendor);
-        return View("Show", model);
+        return View("show", model);
       }
 
 
