@@ -5,13 +5,9 @@ using System;
 
 namespace VendorList.Tests
 {
- [TestClass]
-  public class OrderTest
+  [TestClass]
+  public class VendorTest
   {
 
   }
-
-
-
-
 }

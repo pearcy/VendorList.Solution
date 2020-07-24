@@ -18,7 +18,7 @@ _This app will allow the user to create a list of vendors and their respective o
 
 ## Setup/Installation Requirements
 
-- \_Clone or download this repository located at https://github.com/pearcy/
+- _Clone or download this repository located at https://github.com/pearcy/VendorList.Solution.git
 - _Run \$ dotnet restore to download all dev dependencies_ Ensure that dotnet restore is targeting the directory containing the .csproj file
 - _Run \$ dotnet build to create project_
 
