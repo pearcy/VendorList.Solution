@@ -52,8 +52,7 @@ public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
   string title = "Scone1";
   Order newOrder = new Order(title);
 
-  int result = 0;
-  // int result = newOrder.Id;
+  int result = newOrder.Id;
 
   Assert.AreEqual(1, result);
 }
