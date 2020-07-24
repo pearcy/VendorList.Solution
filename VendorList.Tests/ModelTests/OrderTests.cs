@@ -6,8 +6,13 @@ using System;
 namespace VendorList.Tests
 {
  [TestClass]
-  public class OrderTest
+  public class OrderTest : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstancesOfOrder_Order()
     {
@@ -26,6 +31,24 @@ namespace VendorList.Tests
       Assert.AreEqual(title, result);
 
     }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+     
+      string title = "Scone";
+      Order newOrder = new Order(title);
+
+      string updatedTitle = "Do the dishes";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      Assert.AreEqual(updatedTitle, result);
+    }
+
+    
+
+
     
 
   }
