@@ -57,6 +57,22 @@ public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
   Assert.AreEqual(1, result);
 }
 
+[TestMethod]
+  public void Find_ReturnsCorrectOrder_Order()
+  {
+    //Arrange
+    string title01 = "scone1";
+    string title02 = "scone2";
+    Order newOrder1 = new Order(title01);
+    Order newOrder2 = new Order(title02);
+
+    //Act
+    Order result = Order.Find(2);
+
+    //Assert
+    Assert.AreEqual(newOrder2, result);
+  }
+
 
 
 
