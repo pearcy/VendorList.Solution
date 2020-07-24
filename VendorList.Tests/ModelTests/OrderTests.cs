@@ -39,7 +39,7 @@ namespace VendorList.Tests
     string title = "Scone";
     Order newOrder = new Order(title);
 
-    string updatedTitle = "Do the dishes";
+    string updatedTitle = "Muffin";
     newOrder.Title = updatedTitle;
     string result = newOrder.Title;
 

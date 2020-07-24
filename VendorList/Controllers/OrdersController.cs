@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace VendorList.Controllers
 {
-  public class OrdersController :Controller
+  public class OrdersController : Controller
   {
 
       [HttpGet("/orders")]
