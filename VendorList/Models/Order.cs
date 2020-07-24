@@ -10,8 +10,16 @@ namespace VendorList.Models
     public int Date { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> {};
-   
-  }
 
+    public Order(string title)
+    {
+      Title = title;
+      _instances.Add(this);
+      Id = _instances.Count;
+      
+    } 
+
+    
+  }
 }
 

@@ -14,6 +14,18 @@ namespace VendorList.Tests
       Order newOrder = new Order("test order");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
+    [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      string title = "Scone";
+
+      Order newOrder = new Order(title);
+      string result = newOrder.Title;
+
+      Assert.AreEqual(title, result);
+
+    }
     
 
   }
