@@ -4,19 +4,14 @@
 
 <ol>
 @foreach (Order order in @Model["orders"])
+
 {
   <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
 }
 </ol>
 
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-<p><a href='/categories/@Model["category"].Id/items/new'>Add a new item</a></p>
-
 <p><a href='/vendors'>Return to vendor list</a></p>
 <p><a href='/'>Return to Home Page</a></p>
 
 
-@* @foreach (var item in @Model["items"])
-{
-  <li><a href='/categories/@Model["category"].Id/items/@item.Id'>@item.Description</a></li>
-} *@
